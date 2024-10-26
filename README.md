@@ -1,7 +1,7 @@
 # `<image-input>` Element
 A custom `HTMLInputElement` that accepts an image and provides a simple preview for common image value use-cases.
 
-Package size: ~7kb minified, ~9kb verbose.
+Package size: ~8kb minified, ~12kb verbose.
 
 ## Quick Reference
 ```html
