@@ -1,0 +1,45 @@
+{
+  "name": "@magnit-ce/image-input",
+  "version": "0.0.1",
+  "description": "A custom html input element that accepts an image and provides a simple preview for common image value use-cases.",
+  "type": "module",
+  "main": "dist/image-input.js",
+  "module": "dist/image-input.mjs",
+  "types": "dist/image-input.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup image-input.ts --format cjs,esm --dts --clean",
+    "build-vanilla": "tsup image-input.ts --format esm --dts --clean --outDir ./vanilla",
+    "minify": "tsup image-input.ts --format esm --config ./tsup.config.min.ts --outDir ./vanilla --minify",
+    "lint": "tsup image-input.ts --format esm --tsconfig ./tsconfig.lint.json",
+    "package": "npm run build && npm run build-vanilla && npm run minify",
+    "release": "npm run package && changeset publish"
+  },
+  "keywords": [
+    "custom",
+    "element",
+    "html",
+    "file",
+    "image",
+    "picture",
+    "form",
+    "visualizer",
+    "preview",
+    "selected"
+  ],
+  "author": "catapart",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/catapart/magnitce-image-input"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "minify": "^11.4.0",
+    "terser": "^5.31.3",
+    "tsup": "^8.2.0",
+    "typescript": "^5.5.3"
+  }
+}
