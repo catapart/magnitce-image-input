@@ -190,8 +190,6 @@ export class ImageInputElement extends HTMLElement
                 placeholderLabel.textContent = this.getAttribute('placeholder') ?? "Select an image...";
             }
 
-            this.findPart("label").focus();
-
             if(this.#previewURL != null)
             {
                 window.URL.revokeObjectURL(this.#previewURL);

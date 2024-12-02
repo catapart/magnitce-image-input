@@ -3,56 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Input Demo</title>
+    <title>&lt;image-input&gt; Demo</title>
     <link rel="stylesheet" href="./demo-page.css">
 </head>
 <body>
-    <main>
-        <h1>Overview</h1>
-        <div class="overview">
+    <main class="centered-single-column">
+        <header class="full-width">
+            <div class="content centered-single-column">
+                <h1>The <code>image-input</code> element</h1>
+            </div>
+        </header>
+        <article class="overview">
+            <h2>Overview</h2>
             <p>The <code>&lt;image-input&gt;</code> element is intended to be used in forms for collecting images from a user.</p>
             <p>It uses an <code>&lt;input type="file"/&gt;</code> element for its file handling which means that it works identically to the "file" type input.</p>
-        </div>
-        <h1>Examples</h1>
+        </article>
         <article class="basic">
-            <header>Basic Example</header>
-            <section class="description">
+            <h2>Basic Example</h2>
+            <div class="description">
                 <p>The <code>&lt;image-input&gt;</code> element is activated like other input elements, either by click or by key input. Once activated, the user is prompted with a dialog to select an image from their local machine.</p>
                 <p>When the user selects an image, the image is processed into an <code>&lt;img&gt;</code> element and displayed in the input along with the "Clear Selection" and "View Full Size" options.</p>
                 <p>The "Clear Selection" option will clear the input, which ensures that any <code>FormData</code> generated from a wrapping <code>&lt;form&gt;</code> will not include the previously selected image.</p>
                 <p>The "View Full Size" option will provide the selected image's image data to the browser. In most browsers, this will open the image in a new context (Tab/Window) for full-size viewing.</p>
-            </section>
+            </div>
             <div class="example">
                 <image-input></image-input>
             </div>
         </article>
         <article class="customization">
-            <header>Customization</header>
-            <section class="description">
+            <h2>Customization</h2>
+            <div class="description">
                 <p>The <code>&lt;image-input&gt;</code> element allows text customization for its placeholder content, its "View Full Size" link, and its "Clear Selection" link. Each of these can be customized using the element's <code>&lt;slot&gt;</code>s.</p>
-            </section>
-            <div class="example">
-                <section>
-                    <header>Placeholder Attribute</header>
-                    <p>In this example the input has been given a <code>placeholder</code></code> attribute. Only the text is replaced.</p>
+            </div>
+            <section>
+                <h4>Placeholder Attribute</h4>
+                <p>In this example the input has been given a <code>placeholder</code></code> attribute. Only the text is replaced.</p>
+                <div class="example">
                     <image-input placeholder="Custom value in placeholder attribute"></image-input>
-                </section>
-                <section>
-                    <header>Slots</header>
-                    <p>In this example, each of the slots have been replaced with custom <code>&lt;span&gt;</code> elements</p>
+                </div>
+            </section>
+            <section>
+                <h4>Slots</h4>
+                <p>In this example, each of the slots have been replaced with custom <code>&lt;span&gt;</code> elements</p>
+                <div class="example">
                     <image-input>
                         <span slot="placeholder-icon">&#x2709;</span>
                         <span slot="placeholder">Custom placeholder with a custom icon and custom links</span>
                         <span slot="clear">Custom Clear</span>
                         <span slot="view-link">Custom Fullsize</span>
                     </image-input>
-                </section>
-                <section>
-                    <header><code>block</code> Class</header>
-                    <p>In this example, the <code>&lt;image-input&gt;</code> element has been given a class of <code>block</code>, which provides a block-style layout for the input, rather than the inline-style layout that is the default.</p>
+                </div>
+            </section>
+            <section>
+                <h4><code>block</code> Class</h4>
+                <p>In this example, the <code>&lt;image-input&gt;</code> element has been given a class of <code>block</code>, which provides a block-style layout for the input, rather than the inline-style layout that is the default.</p>
+                <div class="example">
                     <image-input class="block"></image-input>
-                </section>
-            </div>
+                </div>
+            </section>
         </article>
         <article class="form-data">
             <style>
@@ -96,14 +104,14 @@
                     --icon-primary-color: var(--placeholder-color);
                 }
             </style>
-            <header>Form Data</header>
-            <section class="description">
+            <h2>Form Data</h2>
+            <div class="description">
                 <p>The <code>&lt;image-input&gt;</code> element implements form handling so that all expected input functionality works as expected.</p>
                 <p>For example, adding a <code>required</code> attribute will prevent a form from submitting if the input isn't populated. It will also provide a validation message, in that case.</p>
                 <p>Similarly, collecting a <code>&lt;form&gt;</code> element's <code>FormData</code> during its <code>submit</code> event will provide the image data as a property labeled by the <code>&lt;image-input&gt;</code>'s <code>name</code> attribute value.</p>
                 <p>In this example, all of the FormData is logged in the event log, when the form is submitted. One of the <code>&lt;image-input&gt;</code> elements has been given a <code>required</code> attribute, and has been styled to indicate the <code>:invalid</code> state.</p>
                 <p>Additional form elements have been added for comparison. The text input rejects any numeric content, as a way to see an invalid text field for comparison.</p>
-            </section>
+            </div>
             <div class="example">
                 <form>
                     <header>Simple Form</header>
